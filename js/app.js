@@ -23,16 +23,24 @@ const app = new Vue(
             },
             ],
             editMode: false,
-            newTasks: ""
+            newTasks: "",
         },
         methods:
         {
             openEditMode(){
-                if(this.editMode === "true"){
+                if(this.editMode){
                     this.editMode = false
                 }
-                else if(this.editMode === "false"){
+                else if(!this.editMode){
                     this.editMode = true
+                }
+            },
+            taskDone(index){
+                if(!this.toDoList[index].done){
+                    this.toDoList[index].done = true;
+                }
+                else if(this.toDoList[index].done){
+                    this.toDoList[index].done = false;
                 }
             }
         }

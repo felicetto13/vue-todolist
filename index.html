@@ -32,8 +32,8 @@
                                 <li class="list-items mb-3" v-for="(item,i) in toDoList">
                                     <div class="justify-content-between d-flex">
                                         <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" :id="'flexCheckDefault_' + i">
-                                        <label class="form-check-label" :for="'flexCheckDefault_' + i">
+                                        <input class="form-check-input" type="checkbox" value="" :id="'flexCheckDefault_' + i" @click="taskDone(i)">
+                                        <label class="form-check-label" :for="'flexCheckDefault_' + i" :class="{'text-decoration-line-through': item.done, 'text-secondary': item.done }">
                                             {{ item.text }}
                                         </label>
                                     </div>
@@ -44,12 +44,12 @@
                         </div>
                     </div>
                     
-                    <input type="text" id="addText" placeholder="inseirsci nuova Task" v:model="newTasks">
+                    <input type="text" id="addText" placeholder="inseirsci nuova Task" v-if="editMode" v-model="newTasks">
                     
                 </div>
                 <div class="position-relative mt-5">
                         <div class="addedButton">
-                        <button class="btn btn-success btn-lg " @click="openEditMode" :class="{'btn-success' : !editMode , 'btn-danger' : editMode}"><i class="fa fa-xmark" :class="{'fa-plus' : !editMode , 'fa-xmark' : editMode}"></i></button>
+                        <button class="btn btn-lg btn-tasks" @click="openEditMode()" :class="{'btn-success': !editMode, 'btn-danger': editMode}" ><i class="fa" :class="{'fa-plus': !editMode , 'fa-xmark':editMode}"></i></button>
                     </div>
                     </div>
             </div>

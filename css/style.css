@@ -1,17 +1,21 @@
-body{
+body {
     background: linear-gradient(#a8eb79 0%, #4dcbeb 100%);
     height: 100vh;
 }
 
-.list-items:not(:hover) .btn-delete{
-    opacity:0;
+.list-items:not(:hover) .btn-delete {
+    opacity: 0;
 }
 
-.addedButton{
+.addedButton {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
-    transform: translateY(100%);
+    transform: translateY(50%);
+}
+
+.btn-tasks, .btn-tasks i{
+    transition: all 1s;
 }
