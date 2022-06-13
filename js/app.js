@@ -42,6 +42,9 @@ const app = new Vue(
                 else if(this.toDoList[index].done){
                     this.toDoList[index].done = false;
                 }
+            },
+            removeTasks(index){
+                this.toDoList.splice(index, 1);
             }
         }
     }
