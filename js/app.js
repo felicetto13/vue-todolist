@@ -45,6 +45,14 @@ const app = new Vue(
             },
             removeTasks(index){
                 this.toDoList.splice(index, 1);
+            },
+            addTasks(){
+
+                this.toDoList.push({text: this.newTasks.trim(), done: false})
+                
+                this.newTasks = "";
+                this.editMode = false
+
             }
         }
     }
