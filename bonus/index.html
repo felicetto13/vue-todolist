@@ -52,10 +52,9 @@
                         <input type="text" class="form-control" id="addText" placeholder="inseirsci nuova Task" v-model="newTasks">
                         <button class="btn btn-outline-success" type="button" id="button-addon2"  @click="addTasks">Aggiungi</button>
                     </div> -->
-                    <input type="text" class="form-control" id="addText" placeholder="inseirsci nuova Task" v-if="editMode" @keyup.enter="addTasks"
-                        v-model="newTasks">
-
-                </div>  
+                    <input type="text" class="form-control" id="addText" placeholder="inseirsci nuova Task"
+                        v-if="editMode" @keyup.enter="addTasks" v-model="newTasks">
+                </div>
                 <div class="position-relative mt-5">
                     <div class="addedButton">
                         <button class="btn btn-lg btn-tasks" @click="openEditMode()"
